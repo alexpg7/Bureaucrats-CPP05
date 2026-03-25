@@ -18,10 +18,10 @@ int	main(void)
 		std::cerr << e.what() << '\n';
 	}
 
-	std::cout << "\nTry to lower a grade:" << std::endl;
+	std::cout << "\nTry to higher a grade:" << std::endl;
 	try
 	{
-		bur2.decrementGrade();
+		bur1.incrementGrade();
 	}
 	catch(const std::exception& e)
 	{
