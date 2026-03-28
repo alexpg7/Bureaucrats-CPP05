@@ -1,9 +1,10 @@
 NAME = main
 SRC = main.cpp \
 	Bureaucrat.cpp \
-	AForm.cpp
+	AForm.cpp \
+	ShrubberyCreationForm.cpp
 
-INCLUDE = Bureaucrat.hpp AForm.hpp Makefile
+INCLUDE = Bureaucrat.hpp AForm.hpp  ShrubberyCreationForm.hpp Makefile
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++

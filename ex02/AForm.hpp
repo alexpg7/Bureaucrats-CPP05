@@ -23,7 +23,13 @@ class	AForm
 		const unsigned int	getSignGrade() const;
 		const unsigned int	getExecutionGrade() const;
 		void				beSigned(const Bureaucrat& bur);
+		virtual void		execute( Bureaucrat const & executor ) const = 0;
 
+	class FormNotSignedException : public std::exception
+	{
+		public:
+			const char* what() const throw();
+	};
 	class GradeTooHighException : public std::exception
 	{
 		public:

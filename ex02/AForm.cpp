@@ -10,7 +10,7 @@ AForm::AForm(const AForm &form): _issigned(form.isSigned()), _signgrade(form.get
 	return ;
 }
 AForm::AForm(const std::string name, const unsigned int signgrade, const unsigned int execgrade):
-_name(name), _signgrade(signgrade), _execgrade(signgrade)
+_name(name), _signgrade(signgrade), _execgrade(execgrade)
 {
 	if (_signgrade > 150 || _execgrade > 150)
 		throw (GradeTooLowException());
@@ -35,7 +35,7 @@ std::ostream& operator<<(std::ostream& os, const AForm& form)
 {
 	os << form.getName() << ", form:" << std::endl;
 	os << "Sign grade " << form.getSignGrade() << std::endl;
-	os << "Execution grade " << form.getExecutionGrade() << std::endl;
+	os << "Execution grade " << form.getExecutionGrade();
 	return (os);
 }
 
@@ -66,6 +66,11 @@ void	AForm::beSigned(const Bureaucrat& bur)
 	else
 		throw (GradeTooLowException());
 	return ;
+}
+
+const char* AForm::FormNotSignedException::what() const throw()
+{
+	return ("Form not signed!");
 }
 
 const char* AForm::GradeTooLowException::what() const throw()

@@ -10,7 +10,7 @@ Form::Form(const Form &form): _issigned(form.isSigned()), _signgrade(form.getSig
 	return ;
 }
 Form::Form(const std::string name, const unsigned int signgrade, const unsigned int execgrade):
-_name(name), _signgrade(signgrade), _execgrade(signgrade)
+_name(name), _signgrade(signgrade), _execgrade(execgrade)
 {
 	if (_signgrade > 150 || _execgrade > 150)
 		throw (GradeTooLowException());
@@ -35,7 +35,7 @@ std::ostream& operator<<(std::ostream& os, const Form& form)
 {
 	os << form.getName() << ", form:" << std::endl;
 	os << "Sign grade " << form.getSignGrade() << std::endl;
-	os << "Execution grade " << form.getExecutionGrade() << std::endl;
+	os << "Execution grade " << form.getExecutionGrade();
 	return (os);
 }
 
