@@ -14,7 +14,7 @@ ShrubberyCreationForm::ShrubberyCreationForm (const std::string target)
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& copy)
-	: AForm(copy ), _target(copy._target)
+	: AForm(copy), _target(copy._target)
 {
 	return ;
 }
@@ -42,14 +42,29 @@ std::string ShrubberyCreationForm::getTarget() const
 void	ShrubberyCreationForm::execute(const Bureaucrat& executor) const
 {
 	if (this->isSigned() != 1)
-		throw ( AForm::FormNotSignedException() );
+		throw (AForm::FormNotSignedException());
 
 	if (executor.getGrade() > this->getExecutionGrade())
-		throw ( AForm::GradeTooLowException() );
+		throw (AForm::GradeTooLowException());
 
 	std::string fileName = _target + "_shrubbery";
 	std::ofstream file(fileName);
-	//print here the trees
-	file << "tree" << std::endl;
+	file << "          .     .  .      +     .      .          ." << std::endl;
+	file << "     .       .      .     #       .           ." << std::endl;
+	file << "        .      .         ###            .      .      ." << std::endl;
+	file << "      .      .   \"#:. .:##\"##:. .:#\"  .      ." << std::endl;
+	file << "          .      . \"####\"###\"####\"  ." << std::endl;
+	file << "       .     \"#:.    .:#\"###\"#:.    .:#\"  .        .       ." << std::endl;
+	file << "  .             \"#########\"#########\"        .        ." << std::endl;
+	file << "        .    \"#:.  \"####\"###\"####\"  .:#\"   .       ." << std::endl;
+	file << "     .     .  \"#######\"\"##\"##\"\"#######\"                  ." << std::endl;
+	file << "                .\"##\"#####\"#####\"##\"           .      ." << std::endl;
+	file << "    .   \"#:. ...  .:##\"###\"###\"##:.  ... .:#\"     ." << std::endl;
+	file << "      .     \"#######\"##\"#####\"##\"#######\"      .     ." << std::endl;
+	file << "    .    .     \"#####\"\"#######\"\"#####\"    .      ." << std::endl;
+	file << "            .     \"      000      \"    .     ." << std::endl;
+	file << "       .         .   .   000     .        .       ." << std::endl;
+	file << ".. .. ..................O000O........................ ......" << std::endl;
+	file.close();
 }
 

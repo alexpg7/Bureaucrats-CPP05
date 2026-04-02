@@ -75,10 +75,10 @@ const char* AForm::FormNotSignedException::what() const throw()
 
 const char* AForm::GradeTooLowException::what() const throw()
 {
-	return ("Grade is too low. Grade must be between 1 and 150.");
+	return ("Grade is too low.");
 }
 
 const char* AForm::GradeTooHighException::what() const throw()
 {
-	return ("Grade is too high. Grade must be between 1 and 150.");
+	return ("Grade is too high.");
 }

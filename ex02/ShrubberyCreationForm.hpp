@@ -13,7 +13,7 @@ class ShrubberyCreationForm: public AForm
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(const std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm& copy);
-		ShrubberyCreationForm& operator=( const ShrubberyCreationForm& copy);
+		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& copy);
 		~ShrubberyCreationForm();
 
 		std::string getTarget() const;

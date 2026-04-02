@@ -2,11 +2,19 @@ NAME = main
 SRC = main.cpp \
 	Bureaucrat.cpp \
 	AForm.cpp \
-	ShrubberyCreationForm.cpp
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp
 
-INCLUDE = Bureaucrat.hpp AForm.hpp  ShrubberyCreationForm.hpp Makefile
+INCLUDE = Bureaucrat.hpp \
+	AForm.hpp \
+	ShrubberyCreationForm.hpp \
+	RobotomyRequestForm.hpp \
+	PresidentialPardonForm.hpp \
+	Makefile
 
 OBJ = $(SRC:.cpp=.o)
+FILES = *_shrubbery
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
@@ -34,8 +42,8 @@ fclean: clean
 	@echo "🗑️  $(BRED)Removed $(YEL)$(NAME)"
 
 clean:
-	@$(RM) $(OBJ)
-	@echo "🗑️  $(BRED)Removed $(RED)$(OBJ)"
+	@$(RM) $(OBJ) $(FILES)
+	@echo "🗑️  $(BRED)Removed $(RED)$(OBJ) $(FILES)"
 
 re: fclean all
 
