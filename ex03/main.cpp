@@ -13,5 +13,8 @@ int	main(void)
 	Bureaucrat	bur("okto", 1);
 	bur.signForm(*request);
 
-	intern.makeForm("Random name", "Target");
+	AForm *request2 = intern.makeForm("Random name", "Target");
+	delete request;
+	delete request2;
+	return 0;
 }
